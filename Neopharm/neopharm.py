@@ -18,9 +18,6 @@ def get_data(url=None):
     
     data = data["stores"]
 
-    with open('header1.txt', 'w', encoding='utf-8') as file:
-        json.dump(data, file, ensure_ascii=False, indent=4)
-
     return data
 
 def format_data (data):
