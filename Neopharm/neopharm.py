@@ -58,6 +58,7 @@ def main ():
     geojson = format_data(data)
     output = open("neopharm.geojson", 'w')
     json.dump(geojson, output)
+    output.close()
 
 if __name__ == '__main__':
     main()
