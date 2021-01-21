@@ -1,0 +1,34 @@
+# venv
+venv
+
+# pycharm
+/.idea/*
+
+# jupyter
+.ipynb_checkpoints
+
+# python
+__pycache__
+
+# sources
+!.README.md
+
+# temp folder
+/tmp/*
+/webapp/tmp/*
+
+# sources folder
+/sources/*
+
+# vscode
+.vscode
+
+# outputs
+warehouse
+
+
+# logs
+*.log
+
+# for desktop version
+tmp
