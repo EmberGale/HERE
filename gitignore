@@ -22,7 +22,9 @@ __pycache__
 /sources/*
 
 # vscode
+.vscode
 .vscode/*
+.vscode/settings.json
 
 # outputs
 warehouse
