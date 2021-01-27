@@ -1,55 +1,30 @@
 import requests
 import json
-import os
-from pathlib import Path
 
-import selenium
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+url = "https://www.rigla.ru/graphql"
 
-import geckodriver_autoinstaller
+payload="{\"query\":\"\\n        query {\\n            pvzCities{\\n              cities\\n              region_id\\n              base_url\\n              region_name\\n              default_city\\n            }\\n        }\\n      \",\"variables\":{}}"
+headers = {
+  'Content-Type': 'text/plain',
+  'Cookie': 'PHPSESSID=9781e08c97b583dc47c700944fcb3a8a',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36'
+}
 
-from webdriverdownloader import GeckoDriverDownloader
+response = requests.request("POST", url, headers=headers, data=payload)
 
-url= 'https://www.rigla.ru/pharmacies'
+print(response.text)
 
-def get_data(url=None):
-    if url is None:
-        return False
+j = json.loads(response.text)
+j = j["data"]["pvzCities"]
 
-    header = {'Content-Type': 'application/x-www-form-urlencoded',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36'
-    }
 
-    driver_path = Path.cwd().parent / '..' / 'geckodriver.exe'
+ids = {
+  {
+    'region_id': d['region_id']
+  }
+  for d in j
+}
 
-    firefox_profile = webdriver.FirefoxProfile()
-    print("wbd")
-    firefox_profile = webdriver.FirefoxProfile()
-    firefox_profile.set_preference('permissions.default.image', 2)
-    driver = webdriver.Firefox(executable_path=driver_path,
-                            firefox_profile=firefox_profile)
-    driver.get('https://small.kz/')
-
-#    wd = webdriver.Firefox()
-#    wd.get(url)
-#    ids = wd.execute_script("return sessionStorage.getItem('pvzCities')")
-#    print(ids)
-
-    #s = requests.Session()
-    #r = requests.get(url, headers=header)
-
-    #print("-GET-")
-    #print(r.text)
-    #output = open("rigla.txt", 'w')
-    #output.write(r.text)
-    #output.close()
-
-    return True
-
-def main ():
-    data = get_data(url)
-
-if __name__ == '__main__':
-    main()
+o = open("r.txt", 'w')
+o.write(json.dumps(j))
+o.close
