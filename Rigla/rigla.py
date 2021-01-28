@@ -12,19 +12,17 @@ headers = {
 
 response = requests.request("POST", url, headers=headers, data=payload)
 
-print(response.text)
+#print(response.text)
 
 j = json.loads(response.text)
 j = j["data"]["pvzCities"]
 
+#print(json.dumps(j))
 
-ids = {
-  {
-    'region_id': d['region_id']
-  }
-  for d in j
-}
+ids = []
+for d in j:
+  ids.append(d['region_id'])
 
 o = open("r.txt", 'w')
-o.write(json.dumps(j))
-o.close
+o.write(json.dumps(ids))
+o.close 
