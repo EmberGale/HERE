@@ -78,6 +78,7 @@ def get_data (url):
 
 def main ():
     data = get_data(url)
+    print(data)
     data = sort(data)
     o = open("oil.geojson", 'w')
     o.write(json.dumps(data))
