@@ -71,12 +71,11 @@ def ToGeojson(data, dataGeojson):
   for d in data:
     try:
       float(d['longitude'])
-      float(d['longitude'])
+      float(d['latitude'])
     except:
       if d['address'] == '':
         continue
       
-      print("Address fail: ", d["address"])
       buff = geocode(d['address'], API_KEY)
       d['longitude'] = buff['lat']
       d['longitude'] = buff['lng']
