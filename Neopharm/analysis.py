@@ -6,10 +6,7 @@ import geopandas as gpd
 from shapely.geometry import Point, LineString
 from geopy.distance import geodesic
 
-from fgeocode import ForwardGeocoderV7
-from fgeocode import MyFg
-
-er_list = []
+from fgeocode import ForwardGeocoderV7, MyFg
 
 def prepare_data (input_filename, delimiter=";", encoding='utf-8'):
     '''

@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "properties": { "ADDRESS": " Москва г, тер Сколково инновационного центра, б-р Большой, дом № 40", "ORIGINAL_LAT": 55.695806, "ORIGINAL_LNG": 37.346833, "LABEL": null, "COUNTRY": null, "ADMIN3": null, "CITY": null, "POSTALCODE": null, "LAT": null, "LNG": null, "ACCESS_LAT": null, "ACCESS_LNG": null, "RESULT_TYPE": null, "HOUSE_NUMBER_TYPE": null, "QUERY_SCORE": null, "CITY_SCORE": null, "STREET_SCORE": null, "HOUSE_NUMBER_SCORE": null }, "geometry": { "type": "Point", "coordinates": [ 37.346833, 55.695806 ] } },
+{ "type": "Feature", "properties": { "ADDRESS": " Москва г, Одесская ул, владение № 2, строение 1,2,3,4", "ORIGINAL_LAT": 55.664182, "ORIGINAL_LNG": 37.598663, "LABEL": null, "COUNTRY": null, "ADMIN3": null, "CITY": null, "POSTALCODE": null, "LAT": null, "LNG": null, "ACCESS_LAT": null, "ACCESS_LNG": null, "RESULT_TYPE": null, "HOUSE_NUMBER_TYPE": null, "QUERY_SCORE": null, "CITY_SCORE": null, "STREET_SCORE": null, "HOUSE_NUMBER_SCORE": null }, "geometry": { "type": "Point", "coordinates": [ 37.598663, 55.664182 ] } }
+]
+}
